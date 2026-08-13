@@ -1,0 +1,43 @@
+#cabecalho, #ul-menu, #logo{
+    display: flex;
+    align-items: center;
+}
+
+#ul-menu{
+    list-style-type: none;
+    height: 100%;
+}
+
+
+#cabecalho{
+    width: 100%;
+    height: 75px;
+    margin: 1px auto;
+    padding: 20px;
+    background-color: var(--cor-primaria);
+    justify-content: space-between;
+    gap: 100px;
+}
+
+#logo{
+    width: 30%;
+    font-size: 25px;
+}
+
+#titulo-logo{
+    color: var(--cor-secundaria);
+    border: 2px solid var(--cor-secundaria);
+    margin: 10px 1px;
+    border-radius: 4px;
+
+
+}
+.lnk-menu{
+    color: var(--branco);
+    text-decoration: none;
+    margin: 0px 14px;
+}
+
+.lnk-menu:hover{
+opacity: 0.5;
+}
