@@ -14,12 +14,12 @@ export const routes: Routes = [
     },
 
     {
-        path: 'home',
+        path: '/home',
         component: HomeComponentComponent
     
     },
     {
-        path: 'atleta',
+        path: '/atleta',
         component: AtletaComponent
     }
    
