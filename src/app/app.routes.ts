@@ -8,18 +8,18 @@ import { HomeComponentComponent } from './component/home-component/home-componen
 export const routes: Routes = [
     {
         path: '',
-        redirectTo:"/home",
+        redirectTo:"home",
         pathMatch:"full"
     
     },
 
     {
-        path: '/home',
+        path: 'home',
         component: HomeComponentComponent
     
     },
     {
-        path: '/atleta',
+        path: 'atleta',
         component: AtletaComponent
     }
    
