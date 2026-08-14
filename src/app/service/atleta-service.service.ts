@@ -11,7 +11,7 @@ export class AtletaServiceService {
   //declaraçao das funcoes de manipulaçao do array
   // add elemento
   adicionarAtleta(atleta: Atleta){
-    //armenge
+    //armengu para gerar id
     atleta.id = this.atletas.length + 1
     this.atletas.push(atleta)
   }
