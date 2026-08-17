@@ -1,38 +1,38 @@
 import { Injectable } from '@angular/core';
 import { Atleta } from '../models/Atleta';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AtletaServiceService {
-  //declarando ARRAY atletas
-  private atletas: Atleta[] = []
 
-  //declaraçao das funcoes de manipulaçao do array
-  // add elemento
-  adicionarAtleta(atleta: Atleta){
-    //armengu para gerar id
-    atleta.id = this.atletas.length + 1
-    this.atletas.push(atleta)
-  }
-  listarAtletas(){
-    console.table(this.atletas)
-    return this.atletas
-  }
-// remover elementos
-  removerElemento(idAtleta:number){
-    this.atletas=this.atletas.filter(elem=>elem.id !== idAtleta)
-  }
-  //remover elmento2
-  removerElemento2(atleta:Atleta){
-    let posArray =this.atletas.findIndex(elem=>elem.id !== atleta.id)
-    this.atletas.splice(1,posArray)
-  }
-  //alterando elemento do array
-  alterarElemento(atleta:Atleta){
-    let posArray = this.atletas.findIndex(elem=>elem.id !== atleta.id)
-    this.atletas[posArray] = atleta
+  constructor(private http: HttpClient) { }
+
+  listarAtletas(): Observable<Atleta[]> {
+    const urlApi = 'https://6a835f65cb486d243403a6c8.mockapi.io/esportearlivre/Atleta'
+    return this.http.get<Atleta[]>(urlApi)
   }
 
-  constructor() { }
+  listarAtleta(idAtleta: number): Observable<Atleta> {
+    const urlApi = `https://6a835f65cb486d243403a6c8.mockapi.io/esportearlivre/Atleta/${idAtleta}`
+    return this.http.get<Atleta>(urlApi)
+  }
+
+  salvarAtleta(atleta: Atleta): Observable<Atleta> {
+    const urlApi = 'https://6a835f65cb486d243403a6c8.mockapi.io/esportearlivre/Atleta'
+    return this.http.post<Atleta>(urlApi, atleta)
+  }
+
+  excluirAtleta(idAtleta: number): Observable<Atleta> {
+    const urlApi = `https://6a835f65cb486d243403a6c8.mockapi.io/esportearlivre/Atleta/${idAtleta}`
+    return this.http.delete<Atleta>(urlApi)
+  }
+
+  alterarAtleta(atleta: Atleta): Observable<Atleta> {
+    const urlApi = `https://6a835f65cb486d243403a6c8.mockapi.io/esportearlivre/Atleta/${atleta.id}`
+    return this.http.put<Atleta>(urlApi, atleta)
+  }
 }
+
