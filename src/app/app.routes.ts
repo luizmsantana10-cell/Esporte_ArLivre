@@ -6,6 +6,7 @@ import { ComponentFixture } from '@angular/core/testing';
 import { HomeComponentComponent } from './component/home-component/home-component.component';
 import { CorridaComponent } from './component/corrida/corrida.component';
 import { CadastroCorridaComponent } from './component/cadastrocorrida/cadastrocorrida.component';
+import { AtletaListaComponent } from './component/atleta/atleta-lista/atleta-lista.component';
 
 export const routes: Routes = [
     {
@@ -27,6 +28,10 @@ export const routes: Routes = [
     {
         path: 'cadastrocorrida',
         component: CadastroCorridaComponent
+    },
+    {
+        path: 'listaatletacorrida',
+        component: AtletaListaComponent,
     }
    
 ];

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+
 import { AtletaServiceService } from '../../service/atleta-service.service';
 import { Atleta } from '../../models/Atleta';
 
@@ -40,11 +41,10 @@ export class AtletaComponent {
     this.ruaLogradouro=''
     this.bairro=''
     this.cidade =''
-    this.cidade = ''
     this.uf = ''
 
   }
-  salvar(){
+  enviarDadosAtleta(){
     const atleta = new Atleta()
     atleta.nome = this.nome
     atleta.cpf = this.cpf
@@ -55,12 +55,26 @@ export class AtletaComponent {
     atleta.cidade = this.cidade
     atleta.uf = this.uf
 
-    this.atletaService.salvarAtleta(atleta)
+     // ENVIA O ATLETA PARA A API
+    // ENVIA O ATLETA PARA A API
+this.atletaService.salvarAtleta(atleta).subscribe({
 
-    this.limparDados()
+  next: (dados) => {
+    console.log('Atleta cadastrado com sucesso!');
+    console.log(dados);
 
-    this.atletaService.listarAtletas()
-    
+    this.limparDados();
+  },
+
+  error: (erro) => {
+    console.log('Erro ao cadastrar atleta:');
+    console.log(erro);
+  }
+
+});
 
   }
+
 }
+
+  

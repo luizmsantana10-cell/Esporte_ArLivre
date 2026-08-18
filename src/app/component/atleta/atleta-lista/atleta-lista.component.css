@@ -1,0 +1,87 @@
+#section-lista-Atleta {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: var(--branco);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+#section-lista-Atleta h2 {
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Cada atleta da lista */
+.atleta-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 20px;
+    margin-bottom: 10px;
+
+    border: 1px solid var(--cor-primaria);
+    border-radius: 5px;
+
+    background-color: #f8f8f8;
+}
+
+/* Dados do atleta */
+.span-dados-atleta {
+    color: var(--cor-primaria);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Área dos links */
+.span-lnk-atletas {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Links A e E */
+.link-atleta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    color: var(--branco);
+    text-decoration: none;
+
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Botão alterar */
+.link-alterar {
+    background-color: var(--cor-primaria);
+}
+
+/* Botão excluir */
+.link-excluir {
+    background-color: #d9534f;
+}
+
+/* Efeito ao passar o mouse */
+.link-atleta:hover {
+    opacity: 0.6;
+}
+
+/* Quando não houver atletas */
+.empty-list-pessoa {
+    padding: 30px;
+    text-align: center;
+
+    color: var(--cor-primaria);
+    font-size: 18px;
+
+    border: 1px dashed var(--cor-primaria);
+    border-radius: 5px;
+}
